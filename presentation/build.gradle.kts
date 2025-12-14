@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.fcitu.presentation"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 26
