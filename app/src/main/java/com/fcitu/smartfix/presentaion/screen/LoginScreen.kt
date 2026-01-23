@@ -165,7 +165,6 @@ fun LoginScreen() {
             Button(
                 onClick = { /* Handle login */ },
                 modifier = Modifier
-                    .padding(bottom = 40.dp)
                     .fillMaxWidth()
                     .height(70.dp)
                     .padding(bottom = 16.dp),
@@ -188,7 +187,7 @@ fun LoginScreen() {
             Button(
                 onClick = { /* Handle create account */ },
                 modifier = Modifier
-                    .width(230.dp)
+                    .fillMaxWidth()
                     .height(56.dp),
                 shape = RoundedCornerShape(16.dp),
                 colors = ButtonDefaults.buttonColors(
