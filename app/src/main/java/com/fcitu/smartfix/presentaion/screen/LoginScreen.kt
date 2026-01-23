@@ -18,7 +18,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -34,7 +33,9 @@ object SmartFixColors {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    onLoginSuccess: () -> Unit
+) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -163,7 +164,7 @@ fun LoginScreen() {
 
             // زر تسجيل الدخول
             Button(
-                onClick = { /* Handle login */ },
+                onClick = onLoginSuccess,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(70.dp)
@@ -185,7 +186,7 @@ fun LoginScreen() {
 
             // زر إنشاء حساب جديد
             Button(
-                onClick = { /* Handle create account */ },
+                onClick = onLoginSuccess,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
@@ -202,14 +203,5 @@ fun LoginScreen() {
                 )
             }
         }
-    }
-}
-
-// Preview للشاشة
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    MaterialTheme {
-        LoginScreen()
     }
 }
