@@ -45,7 +45,7 @@ fun OrderSentScreen(
 
         PrimarySuccessButton(
             text = "متابعة الطلبات",
-            onClick = onTrackOrdersClick,
+            onClick = onTrackOrdersClick, // TODO: Nav to orders tracking screen (coming soon)
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
