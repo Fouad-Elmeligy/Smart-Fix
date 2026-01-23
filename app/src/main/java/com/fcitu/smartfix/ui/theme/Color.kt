@@ -9,3 +9,27 @@ val Pink80 = Color(0xFFEFB8C8)
 val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
+
+object BookingColors {
+    val Primary       = Color(0xFF015EE0) // blue
+    val PrimaryDark   = Color(0xFF091327)
+    val SurfaceSoft   = Color(0xFFF2EBE1)
+    val TextSecondary = Color(0xFF777A82)
+    val TextDark      = Color(0xFF080F25)
+    val AccentBlue    = Color(0xFF7091E2)
+    val AccentOrange  = Color(0xFFE68471)
+}
+
+object SuccessColors {
+    val CircleOuter    = Color(0xFFD9DDE1)
+    val CircleMiddle   = Color(0xFFADC3E1)
+    val CircleInner    = Color(0xFF0061E0)
+
+    val Background     = Color(0xFFF2EBE1)
+    val TextPrimary    = Color(0xFF404D5E)
+    val TextSecondary  = Color(0xFF7D8288)
+
+    val PrimaryButton  = Color(0xFFFF4500)
+    val SecondaryFill  = Color(0xFFD9CFC4)
+    val SecondaryStroke= Color(0xFFE5DFD5)
+}
