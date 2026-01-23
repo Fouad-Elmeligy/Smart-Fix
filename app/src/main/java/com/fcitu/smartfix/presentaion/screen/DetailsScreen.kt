@@ -37,7 +37,10 @@ import coil.compose.AsyncImage // Note: Requires coil-compose dependency
  * Added Image Picking functionality from Gallery.
  */
 @Composable
-fun CustomServiceRequestScreen() {
+fun ServiceDetailsScreen(
+    serviceName: String, // add this
+    onNext: (String) -> Unit
+) {
     var problemDescription by remember { mutableStateOf("") }
 
     // State to hold selected image URIs
@@ -145,7 +148,7 @@ fun CustomServiceRequestScreen() {
             ) {
                 CustomButton(
                     text = "متابعة",
-                    onClick = { /* Handle click */ }
+                    onClick = {onNext(serviceName)}
                 )
             }
         }
