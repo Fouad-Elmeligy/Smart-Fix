@@ -1,7 +1,6 @@
 package com.fcitu.smartfix.presentaion.screen
 
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.rememberScrollState
@@ -14,8 +13,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -58,7 +55,9 @@ object AppColors {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onServiceClick: (String) -> Unit,
+) {
     Scaffold(
         containerColor = AppColors.Background,
         bottomBar = { BottomNav() }
@@ -85,7 +84,7 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.height(20.dp))
 
             // Services
-            ServicesSection()
+            ServicesSection(onServiceClick = onServiceClick)
 
             Spacer(modifier = Modifier.height(80.dp))
         }
@@ -288,8 +287,9 @@ fun DiscountBanner() {
     }
 }
 
+// TODO: if click on each service, nav to details screen
 @Composable
-fun ServicesSection() {
+fun ServicesSection(onServiceClick: (String) -> Unit) {
     Column(
         modifier = Modifier.padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
@@ -304,14 +304,16 @@ fun ServicesSection() {
                 icon = Icons.Outlined.Plumbing,
                 iconColor = AppColors.PlumbingIcon,
                 bgColor = AppColors.PlumbingBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("سباكة") }
             )
             ServiceCard(
                 title = "كهرباء",
                 icon = Icons.Outlined.Lightbulb,
                 iconColor = AppColors.ElectricityIcon,
                 bgColor = AppColors.ElectricityBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("كهرباء") }
             )
         }
 
@@ -325,14 +327,16 @@ fun ServicesSection() {
                 icon = Icons.Outlined.Handyman,
                 iconColor = AppColors.CarpentryIcon,
                 bgColor = AppColors.CarpentryBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("نجارة") }
             )
             ServiceCard(
                 title = "تكييف",
                 icon = Icons.Outlined.AcUnit,
                 iconColor = AppColors.ACIcon,
                 bgColor = AppColors.ACBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("تكييف") }
             )
         }
 
@@ -346,14 +350,16 @@ fun ServicesSection() {
                 icon = Icons.Outlined.Build,
                 iconColor = AppColors.RepairIcon,
                 bgColor = AppColors.RepairBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("إصلاح أجهزة") }
             )
             ServiceCard(
                 title = "نقاشة",
                 icon = Icons.Outlined.Brush,
                 iconColor = AppColors.PaintingIcon,
                 bgColor = AppColors.PaintingBg,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
+                onClick = { onServiceClick("نقاشة") }
             )
         }
     }
@@ -365,10 +371,11 @@ fun ServiceCard(
     icon: ImageVector,
     iconColor: Color,
     bgColor: Color,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
-        onClick = {},
+        onClick = onClick,
         modifier = modifier
             .height(140.dp),
         shape = RoundedCornerShape(18.dp),
@@ -521,10 +528,4 @@ fun BottomNav() {
             )
         )
     }
-}
-@Preview(showBackground = true)
-@Composable
-private fun home() {
-    HomeScreen()
-
 }
