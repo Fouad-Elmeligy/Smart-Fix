@@ -19,3 +19,17 @@ object BookingColors {
     val AccentBlue    = Color(0xFF7091E2)
     val AccentOrange  = Color(0xFFE68471)
 }
+
+object SuccessColors {
+    val CircleOuter    = Color(0xFFD9DDE1)
+    val CircleMiddle   = Color(0xFFADC3E1)
+    val CircleInner    = Color(0xFF0061E0)
+
+    val Background     = Color(0xFFF2EBE1)
+    val TextPrimary    = Color(0xFF404D5E)
+    val TextSecondary  = Color(0xFF7D8288)
+
+    val PrimaryButton  = Color(0xFFFF4500)
+    val SecondaryFill  = Color(0xFFD9CFC4)
+    val SecondaryStroke= Color(0xFFE5DFD5)
+}
